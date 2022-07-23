@@ -124,24 +124,24 @@ public class ResultSetObjectMapper<T> {
                 // boolean, byte, char, short, int, long, float, double
 
                 if (typeName.equals("int")) {
-                    value = new Integer(this.resultSet().getInt(aColumnName));
+                    value = Integer.valueOf(this.resultSet().getInt(aColumnName));
                 } else if (typeName.equals("long")) {
-                    value = new Long(this.resultSet().getLong(aColumnName));
+                    value = Long.valueOf(this.resultSet().getLong(aColumnName));
                 } else if (typeName.equals("boolean")) {
                     int oneOrZero = this.resultSet().getInt(aColumnName);
                     value = oneOrZero == 1 ? Boolean.TRUE : Boolean.FALSE;
                 } else if (typeName.equals("short")) {
-                    value = new Short(this.resultSet().getShort(aColumnName));
+                    value = Short.valueOf(this.resultSet().getShort(aColumnName));
                 } else if (typeName.equals("float")) {
-                    value = new Float(this.resultSet().getFloat(aColumnName));
+                    value = Float.valueOf(this.resultSet().getFloat(aColumnName));
                 } else if (typeName.equals("double")) {
-                    value = new Double(this.resultSet().getDouble(aColumnName));
+                    value = Double.valueOf(this.resultSet().getDouble(aColumnName));
                 } else if (typeName.equals("byte")) {
-                    value = new Byte(this.resultSet().getByte(aColumnName));
+                    value = Byte.valueOf(this.resultSet().getByte(aColumnName));
                 } else if (typeName.equals("char")) {
                     String charStr = this.resultSet().getString(aColumnName);
                     if (charStr == null) {
-                        value = new Character((char) 0);
+                        value = Character.valueOf((char) 0);
                     } else {
                         value = charStr.charAt(0);
                     }
